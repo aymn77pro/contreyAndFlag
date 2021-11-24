@@ -4,6 +4,7 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.converter.scalars.ScalarsConverterFactory
 
 import retrofit2.http.GET
 
@@ -18,7 +19,7 @@ private val retrofit = Retrofit.Builder()
     .build()
 interface FlagApiService {
     @GET("images")
-  suspend  fun getPhotos(): List<FlagPhoto>
+  suspend fun getPhotos(): arraylist
 }
 object FlagApi {
     val retrofitService : FlagApiService by lazy {

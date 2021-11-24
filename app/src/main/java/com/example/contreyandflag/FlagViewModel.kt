@@ -15,16 +15,16 @@ class FlagViewModel:ViewModel() {
         getFlagPhotos()
     }
     private fun getFlagPhotos(){
-    viewModelScope.launch {
-        try {
+        viewModelScope.launch {
+            try {
 
-            val listResult = FlagApi.retrofitService.getPhotos()
-            _status.value="Success: ${listResult} Mars photos retrieved"
-        }catch (e:Exception){
-            _status.value = "Failure: ${e.message}"
+                val listResult = FlagApi.retrofitService.getPhotos()
+                _status.value="Success: ${listResult.data.size} Mars photos retrieved"
+            }catch (e:Exception){
+                _status.value = "Failure: ${e.message}"
 
+            }
         }
-    }
     }
 
 }
