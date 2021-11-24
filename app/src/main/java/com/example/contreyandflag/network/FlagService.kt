@@ -9,7 +9,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory
 import retrofit2.http.GET
 
 private const val BASE_URL =
-    "https://countriesnow.space/api/v0.1/countries/flag/"
+    "https://countriesnow.space"
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
     .build()
@@ -18,7 +18,7 @@ private val retrofit = Retrofit.Builder()
     .baseUrl(BASE_URL)
     .build()
 interface FlagApiService {
-    @GET("images")
+    @GET("api/v0.1/countries/flag/images")
   suspend fun getPhotos(): arraylist
 }
 object FlagApi {
