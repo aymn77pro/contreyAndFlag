@@ -20,7 +20,8 @@ class CountryFlag : Fragment() {
   ): View? {
     binding = FragmentCountryFlagBinding.inflate(inflater,container,false)
     binding?.lifecycleOwner = this
-    binding?.viweModel = FlagViewModel()
+    binding?.photosGrid?.adapter = PhotoGridAdapter()
+    binding?.viweModel = sharedViewModel
     return binding?.root
   }
 
