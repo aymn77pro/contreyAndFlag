@@ -11,19 +11,33 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="254dp"
+        android:layout_height="247dp">
+
         <ImageView
-            android:id="@+id/mars_image"
+            android:id="@+id/flag_image"
             android:layout_width="wrap_content"
             android:layout_height="170dp"
-            android:scaleType="fitXY"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="76dp"
             android:adjustViewBounds="true"
             android:padding="2dp"
+            android:scaleType="fitXY"
             app:imageUrl="@{photo.flag}"
-            tools:src="@tools:sample/backgrounds/scenic"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:id="@+id/name_contry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@{photo.name}"
+            app:layout_constraintEnd_toEndOf="@id/flag_image"
+            app:layout_constraintHorizontal_bias="0.423"
+            app:layout_constraintStart_toStartOf="@id/flag_image"
+            app:layout_constraintTop_toBottomOf="@id/flag_image"
+            tools:text="vgf,agsahsnc" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
